@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090f">
+  <meta name="description"
+        content="Link Resolver - pemeriksa dan pengelola tautan.">
+  <title>Link Resolver</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-icon">↗</span>
+      Link<span>Resolver</span>
+    </a>
+    <span class="status">
+      <span class="dot"></span> System online
+    </span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">SMART LINK TOOL</div>
+      <h1>One link.<br><span>Clear destination.</span></h1>
+      <p class="subtitle">
+        Periksa alamat tautan, kenali layanan, dan lanjutkan
+        ke halaman aslinya dengan aman.
+      </p>
+
+      <form id="resolver-form" class="resolver">
+        <label for="link-input">Masukkan URL</label>
+        <div class="input-row">
+          <input
+            id="link-input"
+            name="url"
+            type="url"
+            placeholder="https://example.com/..."
+            autocomplete="url"
+            maxlength="2048"
+            required
+          >
+          <button id="resolve-button" type="submit">
+            Periksa <span>↗</span>
+          </button>
+        </div>
+        <p class="hint">
+          Hanya HTTP dan HTTPS. Jangan masukkan password atau token rahasia.
+        </p>
+      </form>
+
+      <section id="result" class="result hidden"
+               aria-live="polite">
+        <div class="result-heading">
+          <span class="result-icon">✓</span>
+          <div>
+            <h2 id="result-title">Hasil pemeriksaan</h2>
+            <p id="result-description"></p>
+          </div>
+        </div>
+
+        <div class="detail">
+          <span>Layanan terdeteksi</span>
+          <strong id="provider">-</strong>
+        </div>
+
+        <div class="detail">
+          <span>Alamat tautan</span>
+          <a id="result-url" href="#" target="_blank"
+             rel="noopener noreferrer">-</a>
+        </div>
+
+        <p id="notice" class="notice"></p>
+
+        <a id="open-link" class="open-button"
+           href="#" target="_blank" rel="noopener noreferrer">
+          Buka halaman asli ↗
+        </a>
+      </section>
+
+      <section id="error" class="error hidden"
+               role="alert"></section>
+    </section>
+
+    <section class="services">
+      <div class="section-heading">
+        <h2>Layanan yang dikenali</h2>
+        <p>Deteksi domain, bukan bypass proteksi.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <span class="service-symbol purple">S</span>
+          <div><h3>SFL.gl</h3><p>Domain recognition</p></div>
+          <span class="tag">Supported</span>
+        </article>
+        <article class="service-card">
+          <span class="service-symbol orange">L</span>
+          <div><h3>LootLabs</h3><p>Domain recognition</p></div>
+          <span class="tag">Supported</span>
+        </article>
+        <article class="service-card">
+          <span class="service-symbol blue">L</span>
+          <div><h3>Linkvertise</h3><p>Domain recognition</p></div>
+          <span class="tag">Supported</span>
+        </article>
+        <article class="service-card">
+          <span class="service-symbol green">↗</span>
+          <div><h3>Lainnya</h3><p>HTTP / HTTPS links</p></div>
+          <span class="tag">Supported</span>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>Link Resolver · Built for the web</p>
+      <p>Selalu periksa alamat sebelum membuka tautan.</p>
+    </footer>
+  </main>
+</body>
+</html>
